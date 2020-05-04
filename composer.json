@@ -1,8 +1,8 @@
 {
     "name": "v.bezrukov/brain-games",
-		"bin":[
-				"bin/brain-games"
-		],
+		"bin":["bin/brain-games"],
+		"description": "hexlet php first project",
+  	"license": "MIT",
     "authors": [
         {
             "name": "Vladimir Bezrukov",
