@@ -1,5 +1,8 @@
 {
     "name": "v.bezrukov/brain-games",
+		"bin":[
+				"bin/brain-games"
+		],
     "authors": [
         {
             "name": "Vladimir Bezrukov",
