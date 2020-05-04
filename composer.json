@@ -1,13 +1,24 @@
 {
-    "name": "v.bezrukov/brain-games",
-		"bin":["bin/brain-games"],
-		"description": "hexlet php first project",
-  	"license": "MIT",
-    "authors": [
-        {
-            "name": "Vladimir Bezrukov",
-            "email": "virtus.at.honor@gmail.com"
-        }
-    ],
-    "require": {}
+  "name": "v.bezrukov/brain-games",
+  "bin": [
+    "bin/brain-games"
+  ],
+  "description": "hexlet php first project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vladimir Bezrukov",
+      "email": "virtus.at.honor@gmail.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "src/Cli.php"
+    ]
+  },
+  "require": {
+    "wp-cli/php-cli-tools": "^0.11.11"
+  },
+  "require-dev": {
+  }
 }
