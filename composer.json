@@ -1,7 +1,8 @@
 {
   "name": "v.bezrukov/brain-games",
   "bin": [
-    "bin/brain-games"
+    "bin/brain-games",
+    "bin/brain-even"
   ],
   "description": "hexlet php first project",
   "license": "MIT",
