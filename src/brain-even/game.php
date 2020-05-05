@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 namespace BrainGames\Cli\brainEven;
 
@@ -44,7 +44,6 @@ function makeQuestion($name)
     }
 
     return $result;
-
 }
 
 function run()
