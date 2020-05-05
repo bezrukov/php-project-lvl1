@@ -61,6 +61,8 @@ function run()
         $result = makeQuestion($name);
         if ($result) {
             $correctAnswers++;
+        } else {
+            $correctAnswers = 0;
         }
     }
 
