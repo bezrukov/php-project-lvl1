@@ -9,4 +9,8 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-BrainGames\Cli\runBrainEven();
+BrainGames\Cli\run(
+        '\BrainGames\Cli\games\even\getInfo',
+        '\BrainGames\Cli\games\even\makeQuiz',
+        '\BrainGames\Cli\games\even\validationAnswer',
+);

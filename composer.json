@@ -1,7 +1,7 @@
 {
   "name": "v.bezrukov/brain-games",
   "bin": [
-    "bin/brain-games",
+    "bin/brain-calc",
     "bin/brain-even"
   ],
   "description": "hexlet php first project",
@@ -18,7 +18,8 @@
   "autoload": {
     "files": [
       "src/Cli.php",
-      "src/brain-even/game.php"
+      "src/games/even.php",
+      "src/games/calc.php"
     ]
   },
   "require": {
