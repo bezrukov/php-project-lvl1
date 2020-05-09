@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/d76049e539bb91913f1e/maintainability)](https://codeclimate.com/github/bezrukov/php-project-lvl1/maintainability)
+![](https://github.com/actions/php-project-lvl1/workflows/php/badge.svg)
 
 Step 5  
 https://asciinema.org/a/328519
