@@ -8,3 +8,6 @@ https://asciinema.org/a/328379
 
 Step 7  
 https://asciinema.org/a/328384
+
+Step 8  
+https://asciinema.org/a/328504
