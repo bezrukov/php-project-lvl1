@@ -7,8 +7,9 @@ function getRandomNumber()
     return rand(1, 50);
 }
 
-function gcd($a,$b) {
-    return ($a % $b) ? gcd($b,$a % $b) : $b;
+function gcd($a, $b)
+{
+    return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
 
 function validationAnswer($playerAnswer, $systemAnswer)
@@ -32,4 +33,3 @@ function makeQuiz()
         $answer,
     ];
 }
-
