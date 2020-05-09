@@ -2,19 +2,9 @@
 
 namespace BrainGames\Cli\games\even;
 
-function isPrime(int $num)
+function isEven(int $num)
 {
-    if ($num < 2) {
-        return false;
-    }
-
-    for ($i = 2; $i <= $num / 2; $i++) {
-        if ($num % $i === 0) {
-            return false;
-        }
-    }
-
-    return true;
+    return $num % 2 === 0;
 }
 
 function random(): int
@@ -35,7 +25,7 @@ function getInfo()
 function makeQuiz()
 {
     $number = random();
-    $answer = isPrime($number) ? 'yes' : 'no';
+    $answer = isEven($number) ? 'yes' : 'no';
 
     return [
         $number, $answer,
