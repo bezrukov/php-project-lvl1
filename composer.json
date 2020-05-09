@@ -2,7 +2,8 @@
   "name": "v.bezrukov/brain-games",
   "bin": [
     "bin/brain-calc",
-    "bin/brain-even"
+    "bin/brain-even",
+    "bin/brain-gcd"
   ],
   "description": "hexlet php first project",
   "license": "MIT",
@@ -19,7 +20,8 @@
     "files": [
       "src/Cli.php",
       "src/games/even.php",
-      "src/games/calc.php"
+      "src/games/calc.php",
+      "src/games/gcd.php"
     ]
   },
   "require": {
