@@ -5,3 +5,6 @@ https://asciinema.org/a/326980
 
 Step 6  
 https://asciinema.org/a/328379
+
+Step 7  
+https://asciinema.org/a/328384
