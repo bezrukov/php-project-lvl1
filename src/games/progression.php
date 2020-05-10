@@ -2,6 +2,8 @@
 
 namespace BrainGames\Cli\games\progression;
 
+use function BrainGames\random\random;
+
 function validationAnswer($playerAnswer, $systemAnswer)
 {
     return (int)$playerAnswer === (int)$systemAnswer;
@@ -10,8 +12,8 @@ function validationAnswer($playerAnswer, $systemAnswer)
 function getProgression()
 {
     $progression = array_fill(0, 10, 0);
-    $progression[0] = rand(1, 20);
-    $d = rand(1, 10);
+    $progression[0] = random(1, 20);
+    $d = random(1, 10);
 
     foreach ($progression as $key => $item) {
         if ($key === 0) {
@@ -31,7 +33,7 @@ function getInfo()
 
 function makeQuiz()
 {
-    $randomKey = rand(0, 9);
+    $randomKey = random(0, 9);
     $progression = getProgression();
     $answer = $progression[$randomKey];
     $progression[$randomKey] = '..';

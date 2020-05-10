@@ -2,14 +2,11 @@
 
 namespace BrainGames\Cli\games\even;
 
+use function BrainGames\random\random;
+
 function isEven(int $num)
 {
     return $num % 2 === 0;
-}
-
-function random(): int
-{
-    return rand(1, 300);
 }
 
 function validationAnswer($playerAnswer, $systemAnswer)
@@ -24,7 +21,7 @@ function getInfo()
 
 function makeQuiz()
 {
-    $number = random();
+    $number = random(0, 300);
     $answer = isEven($number) ? 'yes' : 'no';
 
     return [

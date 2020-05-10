@@ -2,16 +2,13 @@
 
 namespace BrainGames\Cli\games\calc;
 
-function getRandomNumber()
-{
-    return rand(1, 300);
-}
+use function BrainGames\random\random;
 
 function getRandomOperation()
 {
     $operations = ['+', '-', '*'];
 
-    return $operations[rand(0, 2)];
+    return $operations[random(0, 2)];
 }
 
 function makeAnswer($firstOperand, $secondOperand, $operation)
@@ -40,8 +37,8 @@ function getInfo()
 
 function makeQuiz()
 {
-    $number1 = getRandomNumber();
-    $number2 = getRandomNumber();
+    $number1 = random(1, 300);
+    $number2 = random(1, 300);
     $operation = getRandomOperation();
     $answer = makeAnswer($number1, $number2, $operation);
 

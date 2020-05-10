@@ -2,9 +2,11 @@
 
 namespace BrainGames\Cli\games\gcd;
 
+use function BrainGames\random\random;
+
 function getRandomNumber()
 {
-    return rand(1, 50);
+    return random(1, 50);
 }
 
 function gcd($a, $b)

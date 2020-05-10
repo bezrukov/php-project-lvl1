@@ -2,6 +2,8 @@
 
 namespace BrainGames\Cli\games\prime;
 
+use function BrainGames\random\random;
+
 function isPrime(int $num)
 {
     if ($num < 2) {
@@ -17,11 +19,6 @@ function isPrime(int $num)
     return true;
 }
 
-function random(): int
-{
-    return rand(1, 300);
-}
-
 function validationAnswer($playerAnswer, $systemAnswer)
 {
     return $playerAnswer === $systemAnswer;
@@ -34,7 +31,7 @@ function getInfo()
 
 function makeQuiz()
 {
-    $number = random();
+    $number = random(1, 300);
     $answer = isPrime($number) ? 'yes' : 'no';
 
     return [
