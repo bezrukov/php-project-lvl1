@@ -2,21 +2,12 @@
 
 namespace BrainGames\Cli\games\even;
 
+use function BrainGames\Cli\run;
 use function BrainGames\random\random;
 
 function isEven(int $num)
 {
     return $num % 2 === 0;
-}
-
-function validationAnswer($playerAnswer, $systemAnswer)
-{
-    return $playerAnswer === $systemAnswer;
-}
-
-function getInfo()
-{
-    return 'Answer "yes" if the number is even, otherwise answer "no".';
 }
 
 function makeQuiz()
@@ -27,4 +18,15 @@ function makeQuiz()
     return [
         $number, $answer,
     ];
+}
+
+function game()
+{
+    run(
+        'Answer "yes" if the number is even, otherwise answer "no".',
+        '\BrainGames\Cli\games\even\makeQuiz',
+        function ($playerAnswer, $systemAnswer) {
+            return $playerAnswer === $systemAnswer;
+        }
+    );
 }

@@ -2,12 +2,8 @@
 
 namespace BrainGames\Cli\games\progression;
 
+use function BrainGames\Cli\run;
 use function BrainGames\random\random;
-
-function validationAnswer($playerAnswer, $systemAnswer)
-{
-    return (int)$playerAnswer === (int)$systemAnswer;
-}
 
 function getProgression()
 {
@@ -42,4 +38,15 @@ function makeQuiz()
         implode(' ', $progression),
         $answer,
     ];
+}
+
+function game()
+{
+    run(
+        'What number is missing in the progression?',
+        '\BrainGames\Cli\games\progression\makeQuiz',
+        function ($playerAnswer, $systemAnswer) {
+            return (int)$playerAnswer === (int)$systemAnswer;
+        }
+    );
 }

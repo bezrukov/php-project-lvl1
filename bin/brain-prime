@@ -9,8 +9,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-BrainGames\Cli\run(
-    '\BrainGames\Cli\games\prime\getInfo',
-    '\BrainGames\Cli\games\prime\makeQuiz',
-    '\BrainGames\Cli\games\prime\validationAnswer',
-);
+\BrainGames\Cli\games\prime\game();

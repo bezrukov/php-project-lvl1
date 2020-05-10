@@ -2,6 +2,7 @@
 
 namespace BrainGames\Cli\games\prime;
 
+use function BrainGames\Cli\run;
 use function BrainGames\random\random;
 
 function isPrime(int $num)
@@ -19,16 +20,6 @@ function isPrime(int $num)
     return true;
 }
 
-function validationAnswer($playerAnswer, $systemAnswer)
-{
-    return $playerAnswer === $systemAnswer;
-}
-
-function getInfo()
-{
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".';
-}
-
 function makeQuiz()
 {
     $number = random(1, 300);
@@ -37,4 +28,15 @@ function makeQuiz()
     return [
         $number, $answer,
     ];
+}
+
+function game()
+{
+    run(
+        'Answer "yes" if given number is prime. Otherwise answer "no".',
+        '\BrainGames\Cli\games\prime\makeQuiz',
+        function ($playerAnswer, $systemAnswer) {
+            return $playerAnswer === $systemAnswer;
+        }
+    );
 }

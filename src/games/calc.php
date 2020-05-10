@@ -2,6 +2,7 @@
 
 namespace BrainGames\Cli\games\calc;
 
+use function BrainGames\Cli\run;
 use function BrainGames\random\random;
 
 function getRandomOperation()
@@ -25,16 +26,6 @@ function makeAnswer($firstOperand, $secondOperand, $operation)
     }
 }
 
-function validationAnswer($playerAnswer, $systemAnswer)
-{
-    return (int)$playerAnswer === (int) $systemAnswer;
-}
-
-function getInfo()
-{
-    return 'What is the result of the expression?';
-}
-
 function makeQuiz()
 {
     $number1 = random(1, 300);
@@ -46,4 +37,15 @@ function makeQuiz()
         "{$number1} {$operation} {$number2}",
         $answer,
     ];
+}
+
+function game()
+{
+    run(
+        'What is the result of the expression?',
+        '\BrainGames\Cli\games\calc\makeQuiz',
+        function ($playerAnswer, $systemAnswer) {
+            return (int)$playerAnswer === (int) $systemAnswer;
+        }
+    );
 }

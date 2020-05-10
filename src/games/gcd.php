@@ -2,6 +2,7 @@
 
 namespace BrainGames\Cli\games\gcd;
 
+use function BrainGames\Cli\run;
 use function BrainGames\random\random;
 
 function getRandomNumber()
@@ -14,16 +15,6 @@ function gcd($a, $b)
     return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
 
-function validationAnswer($playerAnswer, $systemAnswer)
-{
-    return (int)$playerAnswer === (int)$systemAnswer;
-}
-
-function getInfo()
-{
-    return 'Find the greatest common divisor of given numbers.';
-}
-
 function makeQuiz()
 {
     $firstOperand = getRandomNumber();
@@ -34,4 +25,15 @@ function makeQuiz()
         "{$firstOperand} {$secondOperand}",
         $answer,
     ];
+}
+
+function game()
+{
+    run(
+        'Find the greatest common divisor of given numbers.',
+        '\BrainGames\Cli\games\gcd\makeQuiz',
+        function ($playerAnswer, $systemAnswer) {
+            return (int)$playerAnswer === (int)$systemAnswer;
+        }
+    );
 }

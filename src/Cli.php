@@ -31,7 +31,7 @@ function answerIteration($makeQuiz, $validationAnswer, $name, $count = 0)
 function run($info, $makeQuiz, $validationAnswer)
 {
     line('Welcome to Brain Games!');
-    line($info());
+    line($info);
     $name = prompt('May I have your name', false, '? ');
     line("Hello, %s!", $name);
 

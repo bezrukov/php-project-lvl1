@@ -9,8 +9,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-BrainGames\Cli\run(
-    '\BrainGames\Cli\games\progression\getInfo',
-    '\BrainGames\Cli\games\progression\makeQuiz',
-    '\BrainGames\Cli\games\progression\validationAnswer',
-);
+\BrainGames\Cli\games\progression\game();
