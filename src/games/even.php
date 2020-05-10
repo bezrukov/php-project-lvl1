@@ -10,7 +10,7 @@ function isEven(int $num)
     return $num % 2 === 0;
 }
 
-function makeQuiz()
+function playRound()
 {
     $number = random(0, 300);
     $answer = isEven($number) ? 'yes' : 'no';
@@ -24,7 +24,7 @@ function game()
 {
     run(
         'Answer "yes" if the number is even, otherwise answer "no".',
-        '\BrainGames\Cli\games\even\makeQuiz',
+        '\BrainGames\Cli\games\even\playRound',
         function ($playerAnswer, $systemAnswer) {
             return $playerAnswer === $systemAnswer;
         }

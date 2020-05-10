@@ -22,12 +22,7 @@ function getProgression()
     return $progression;
 }
 
-function getInfo()
-{
-    return 'What number is missing in the progression?';
-}
-
-function makeQuiz()
+function playRound()
 {
     $randomKey = random(0, 9);
     $progression = getProgression();
@@ -44,7 +39,7 @@ function game()
 {
     run(
         'What number is missing in the progression?',
-        '\BrainGames\Cli\games\progression\makeQuiz',
+        '\BrainGames\Cli\games\progression\playRound',
         function ($playerAnswer, $systemAnswer) {
             return (int)$playerAnswer === (int)$systemAnswer;
         }

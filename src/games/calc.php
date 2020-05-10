@@ -26,15 +26,15 @@ function makeAnswer($firstOperand, $secondOperand, $operation)
     }
 }
 
-function makeQuiz()
+function playRound()
 {
-    $number1 = random(1, 300);
-    $number2 = random(1, 300);
+    $firstOperand = random(1, 300);
+    $secondOperand = random(1, 300);
     $operation = getRandomOperation();
-    $answer = makeAnswer($number1, $number2, $operation);
+    $answer = makeAnswer($firstOperand, $secondOperand, $operation);
 
     return [
-        "{$number1} {$operation} {$number2}",
+        "{$firstOperand} {$operation} {$secondOperand}",
         $answer,
     ];
 }
@@ -43,7 +43,7 @@ function game()
 {
     run(
         'What is the result of the expression?',
-        '\BrainGames\Cli\games\calc\makeQuiz',
+        '\BrainGames\Cli\games\calc\playRound',
         function ($playerAnswer, $systemAnswer) {
             return (int)$playerAnswer === (int) $systemAnswer;
         }

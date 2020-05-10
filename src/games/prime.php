@@ -20,7 +20,7 @@ function isPrime(int $num)
     return true;
 }
 
-function makeQuiz()
+function playRound()
 {
     $number = random(1, 300);
     $answer = isPrime($number) ? 'yes' : 'no';
@@ -34,7 +34,7 @@ function game()
 {
     run(
         'Answer "yes" if given number is prime. Otherwise answer "no".',
-        '\BrainGames\Cli\games\prime\makeQuiz',
+        '\BrainGames\Cli\games\prime\playRound',
         function ($playerAnswer, $systemAnswer) {
             return $playerAnswer === $systemAnswer;
         }

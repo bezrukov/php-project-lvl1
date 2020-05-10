@@ -15,7 +15,7 @@ function gcd($a, $b)
     return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
 
-function makeQuiz()
+function playRound()
 {
     $firstOperand = getRandomNumber();
     $secondOperand = getRandomNumber();
@@ -31,7 +31,7 @@ function game()
 {
     run(
         'Find the greatest common divisor of given numbers.',
-        '\BrainGames\Cli\games\gcd\makeQuiz',
+        '\BrainGames\Cli\games\gcd\playRound',
         function ($playerAnswer, $systemAnswer) {
             return (int)$playerAnswer === (int)$systemAnswer;
         }
