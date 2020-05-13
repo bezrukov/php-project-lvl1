@@ -4,11 +4,11 @@ namespace BrainGames\Cli\games\calc;
 
 use function BrainGames\Cli\run;
 
-function getRandomOperation($operationCount)
+function getRandomOperation()
 {
     $operations = ['+', '-', '*'];
 
-    return $operations[rand(0, $operationCount - 1)];
+    return $operations[rand(0, count($operations) - 1)];
 }
 
 function makeAnswer($firstOperand, $secondOperand, $operation)
@@ -29,7 +29,7 @@ function playRound()
 {
     $firstOperand = rand(1, 300);
     $secondOperand = rand(1, 300);
-    $operation = getRandomOperation(3);
+    $operation = getRandomOperation();
     $question = "{$firstOperand} {$operation} {$secondOperand}";
     $answer = (string) makeAnswer($firstOperand, $secondOperand, $operation);
 
