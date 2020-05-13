@@ -3,7 +3,6 @@
 namespace BrainGames\Cli\games\prime;
 
 use function BrainGames\Cli\run;
-use function BrainGames\random\random;
 
 function isPrime(int $num)
 {
@@ -36,6 +35,8 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\prime\playRound'
+        function () {
+            return playRound();
+        }
     );
 }

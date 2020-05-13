@@ -22,8 +22,9 @@ function getProgression($length, $firstElement, $step)
 
 function playRound()
 {
+    $progressionLength = 10;
     $randomKey = rand(0, 9);
-    $progression = getProgression(10, rand(1, 20), rand(1, 10));
+    $progression = getProgression($progressionLength, rand(1, 20), rand(1, 10));
     $answer = $progression[$randomKey];
     $progression[$randomKey] = '..';
     $question = (string) implode(' ', $progression);
@@ -40,6 +41,8 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\progression\playRound'
+        function () {
+            return playRound();
+        }
     );
 }

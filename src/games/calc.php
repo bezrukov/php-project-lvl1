@@ -45,6 +45,8 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\calc\playRound'
+        function () {
+            return playRound();
+        }
     );
 }

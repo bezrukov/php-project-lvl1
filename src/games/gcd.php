@@ -28,6 +28,8 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\gcd\playRound'
+        function () {
+            return playRound();
+        }
     );
 }
