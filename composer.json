@@ -20,7 +20,6 @@
   ],
   "autoload": {
     "files": [
-      "src/random.php",
       "src/Cli.php",
       "src/games/even.php",
       "src/games/calc.php",

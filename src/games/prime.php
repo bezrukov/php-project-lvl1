@@ -22,7 +22,7 @@ function isPrime(int $num)
 
 function playRound()
 {
-    $number = random(1, 300);
+    $number = rand(1, 300);
     $answer = isPrime($number) ? 'yes' : 'no';
 
     return [

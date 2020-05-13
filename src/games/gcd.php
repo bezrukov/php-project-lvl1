@@ -3,12 +3,6 @@
 namespace BrainGames\Cli\games\gcd;
 
 use function BrainGames\Cli\run;
-use function BrainGames\random\random;
-
-function getRandomNumber()
-{
-    return random(1, 50);
-}
 
 function gcd($a, $b)
 {
@@ -17,8 +11,8 @@ function gcd($a, $b)
 
 function playRound()
 {
-    $firstOperand = getRandomNumber();
-    $secondOperand = getRandomNumber();
+    $firstOperand = rand(1, 50);
+    $secondOperand = rand(1, 50);
     $answer = gcd($firstOperand, $secondOperand);
 
     return [

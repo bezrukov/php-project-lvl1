@@ -3,7 +3,6 @@
 namespace BrainGames\Cli\games\even;
 
 use function BrainGames\Cli\run;
-use function BrainGames\random\random;
 
 function isEven(int $num)
 {
@@ -12,7 +11,7 @@ function isEven(int $num)
 
 function playRound()
 {
-    $number = random(0, 300);
+    $number = rand(0, 300);
     $answer = isEven($number) ? 'yes' : 'no';
 
     return [

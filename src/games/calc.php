@@ -3,13 +3,12 @@
 namespace BrainGames\Cli\games\calc;
 
 use function BrainGames\Cli\run;
-use function BrainGames\random\random;
 
-function getRandomOperation()
+function getRandomOperation($operationCount)
 {
     $operations = ['+', '-', '*'];
 
-    return $operations[random(0, 2)];
+    return $operations[rand(0, $operationCount - 1)];
 }
 
 function makeAnswer($firstOperand, $secondOperand, $operation)
@@ -28,9 +27,9 @@ function makeAnswer($firstOperand, $secondOperand, $operation)
 
 function playRound()
 {
-    $firstOperand = random(1, 300);
-    $secondOperand = random(1, 300);
-    $operation = getRandomOperation();
+    $firstOperand = rand(1, 300);
+    $secondOperand = rand(1, 300);
+    $operation = getRandomOperation(3);
     $answer = makeAnswer($firstOperand, $secondOperand, $operation);
 
     return [
