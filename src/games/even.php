@@ -11,11 +11,11 @@ function isEven(int $num)
 
 function playRound()
 {
-    $number = rand(0, 300);
-    $answer = isEven($number) ? 'yes' : 'no';
+    $question = rand(0, 300);
+    $answer = isEven($question) ? 'yes' : 'no';
 
     return [
-        $number, $answer,
+        $question, $answer,
     ];
 }
 

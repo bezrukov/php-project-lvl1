@@ -13,11 +13,12 @@ function playRound()
 {
     $firstOperand = rand(1, 50);
     $secondOperand = rand(1, 50);
-    $answer = gcd($firstOperand, $secondOperand);
+    $question = "{$firstOperand} {$secondOperand}";
+    $answer = (string) gcd($firstOperand, $secondOperand);
 
     return [
-        "{$firstOperand} {$secondOperand}",
-        (string) $answer,
+        $question,
+        $answer,
     ];
 }
 

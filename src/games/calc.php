@@ -30,11 +30,12 @@ function playRound()
     $firstOperand = rand(1, 300);
     $secondOperand = rand(1, 300);
     $operation = getRandomOperation(3);
-    $answer = makeAnswer($firstOperand, $secondOperand, $operation);
+    $question = "{$firstOperand} {$operation} {$secondOperand}";
+    $answer = (string) makeAnswer($firstOperand, $secondOperand, $operation);
 
     return [
-        "{$firstOperand} {$operation} {$secondOperand}",
-        (string) $answer,
+        $question,
+        $answer,
     ];
 }
 
