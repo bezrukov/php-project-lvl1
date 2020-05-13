@@ -25,9 +25,6 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\even\playRound',
-        function ($playerAnswer, $systemAnswer) {
-            return $playerAnswer === $systemAnswer;
-        }
+        '\BrainGames\Cli\games\even\playRound'
     );
 }

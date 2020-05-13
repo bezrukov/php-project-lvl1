@@ -17,7 +17,7 @@ function playRound()
 
     return [
         "{$firstOperand} {$secondOperand}",
-        $answer,
+        (string) $answer,
     ];
 }
 
@@ -27,9 +27,6 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\gcd\playRound',
-        function ($playerAnswer, $systemAnswer) {
-            return (int)$playerAnswer === (int)$systemAnswer;
-        }
+        '\BrainGames\Cli\games\gcd\playRound'
     );
 }

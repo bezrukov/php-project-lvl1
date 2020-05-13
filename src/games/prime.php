@@ -36,9 +36,6 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\prime\playRound',
-        function ($playerAnswer, $systemAnswer) {
-            return $playerAnswer === $systemAnswer;
-        }
+        '\BrainGames\Cli\games\prime\playRound'
     );
 }

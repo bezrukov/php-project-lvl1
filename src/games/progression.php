@@ -30,7 +30,7 @@ function playRound()
 
     return [
         implode(' ', $progression),
-        $answer,
+        (string) $answer,
     ];
 }
 
@@ -40,9 +40,6 @@ function game()
 
     run(
         $describeGame,
-        '\BrainGames\Cli\games\progression\playRound',
-        function ($playerAnswer, $systemAnswer) {
-            return (int)$playerAnswer === (int)$systemAnswer;
-        }
+        '\BrainGames\Cli\games\progression\playRound'
     );
 }
