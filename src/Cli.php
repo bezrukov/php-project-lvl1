@@ -28,10 +28,10 @@ function answerIteration($playRound, $validationAnswer, $name, $count = 0)
     return answerIteration($playRound, $validationAnswer, $name, 0);
 }
 
-function run($info, $playRound, $validationAnswer)
+function run($describe, $playRound, $validationAnswer)
 {
     line('Welcome to Brain Games!');
-    line($info);
+    line($describe);
     $name = prompt('May I have your name', false, '? ');
     line("Hello, %s!", $name);
 

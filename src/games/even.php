@@ -21,8 +21,10 @@ function playRound()
 
 function game()
 {
+    $describeGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+
     run(
-        'Answer "yes" if the number is even, otherwise answer "no".',
+        $describeGame,
         '\BrainGames\Cli\games\even\playRound',
         function ($playerAnswer, $systemAnswer) {
             return $playerAnswer === $systemAnswer;

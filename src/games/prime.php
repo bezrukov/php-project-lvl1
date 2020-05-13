@@ -32,8 +32,10 @@ function playRound()
 
 function game()
 {
+    $describeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
     run(
-        'Answer "yes" if given number is prime. Otherwise answer "no".',
+        $describeGame,
         '\BrainGames\Cli\games\prime\playRound',
         function ($playerAnswer, $systemAnswer) {
             return $playerAnswer === $systemAnswer;

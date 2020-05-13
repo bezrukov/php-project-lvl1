@@ -23,8 +23,10 @@ function playRound()
 
 function game()
 {
+    $describeGame = 'Find the greatest common divisor of given numbers.';
+
     run(
-        'Find the greatest common divisor of given numbers.',
+        $describeGame,
         '\BrainGames\Cli\games\gcd\playRound',
         function ($playerAnswer, $systemAnswer) {
             return (int)$playerAnswer === (int)$systemAnswer;

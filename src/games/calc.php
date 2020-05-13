@@ -40,8 +40,10 @@ function playRound()
 
 function game()
 {
+    $describeGame = 'What is the result of the expression?';
+
     run(
-        'What is the result of the expression?',
+        $describeGame,
         '\BrainGames\Cli\games\calc\playRound',
         function ($playerAnswer, $systemAnswer) {
             return (int)$playerAnswer === (int) $systemAnswer;

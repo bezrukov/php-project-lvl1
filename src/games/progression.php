@@ -36,8 +36,10 @@ function playRound()
 
 function game()
 {
+    $describeGame = 'What number is missing in the progression?';
+
     run(
-        'What number is missing in the progression?',
+        $describeGame,
         '\BrainGames\Cli\games\progression\playRound',
         function ($playerAnswer, $systemAnswer) {
             return (int)$playerAnswer === (int)$systemAnswer;
