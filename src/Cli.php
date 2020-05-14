@@ -7,7 +7,7 @@ use function cli\prompt;
 
 define("COUNT_TRUE_ANSWER", 3);
 
-function answerIteration($playRound, $name, $count = 0)
+function answerIteration($playRound, $count = 0)
 {
     if (COUNT_TRUE_ANSWER === $count) {
         return true;
@@ -19,13 +19,12 @@ function answerIteration($playRound, $name, $count = 0)
 
     if ($playerAnswer === $answer) {
         line('Correct!');
-        return answerIteration($playRound, $name, $count + 1);
+        return answerIteration($playRound, $count + 1);
     }
 
     line('"%s" is wrong answer ;(. Correct answer was "%s".', $playerAnswer, $answer);
-    line('Let\'s try again, %s!', $name);
 
-    return answerIteration($playRound, $name, 0);
+    return false;
 }
 
 function run($describe, $playRound)
@@ -35,7 +34,11 @@ function run($describe, $playRound)
     $name = prompt('May I have your name', false, '? ');
     line("Hello, %s!", $name);
 
-    answerIteration($playRound, $name, 0);
+    $result = answerIteration($playRound, 0);
 
-    line('Congratulations, %s!', $name);
+    if ($result) {
+        line('Congratulations, %s!', $name);
+    } else {
+        line('Let\'s try again, %s!', $name);
+    }
 }
