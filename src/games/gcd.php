@@ -9,7 +9,7 @@ function gcd($a, $b)
     return ($a % $b) ? gcd($b, $a % $b) : $b;
 }
 
-function playRound()
+function getGameData()
 {
     $firstOperand = rand(1, 50);
     $secondOperand = rand(1, 50);
@@ -29,7 +29,7 @@ function game()
     run(
         $describeGame,
         function () {
-            return playRound();
+            return getGameData();
         }
     );
 }

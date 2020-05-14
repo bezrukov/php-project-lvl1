@@ -19,7 +19,7 @@ function isPrime(int $num)
     return true;
 }
 
-function playRound()
+function getGameData()
 {
     $question = rand(1, 300);
     $answer = isPrime($question) ? 'yes' : 'no';
@@ -36,7 +36,7 @@ function game()
     run(
         $describeGame,
         function () {
-            return playRound();
+            return getGameData();
         }
     );
 }

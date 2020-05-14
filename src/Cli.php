@@ -5,21 +5,21 @@ namespace BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 
-define("COUNT_TRUE_ANSWER", 3);
+const COUNT_TRUE_ANSWER = 3;
 
-function answerIteration($playRound, $count = 0)
+function answerIteration($getGameData, $count = 0)
 {
     if (COUNT_TRUE_ANSWER === $count) {
         return true;
     }
 
-    [$question, $answer] = $playRound();
+    [$question, $answer] = $getGameData();
     line('Question: %s', $question);
     $playerAnswer = prompt('Your answer');
 
     if ($playerAnswer === $answer) {
         line('Correct!');
-        return answerIteration($playRound, $count + 1);
+        return answerIteration($getGameData, $count + 1);
     }
 
     line('"%s" is wrong answer ;(. Correct answer was "%s".', $playerAnswer, $answer);
@@ -27,14 +27,14 @@ function answerIteration($playRound, $count = 0)
     return false;
 }
 
-function run($describe, $playRound)
+function run($describe, $getGameData)
 {
     line('Welcome to Brain Games!');
     line($describe);
     $name = prompt('May I have your name', false, '? ');
     line("Hello, %s!", $name);
 
-    $result = answerIteration($playRound, 0);
+    $result = answerIteration($getGameData, 0);
 
     if ($result) {
         line('Congratulations, %s!', $name);

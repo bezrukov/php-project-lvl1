@@ -20,7 +20,7 @@ function getProgression($length, $firstElement, $step)
     return $progression;
 }
 
-function playRound()
+function getGameData()
 {
     $progressionLength = 10;
     $randomKey = rand(0, 9);
@@ -42,7 +42,7 @@ function game()
     run(
         $describeGame,
         function () {
-            return playRound();
+            return getGameData();
         }
     );
 }

@@ -8,7 +8,7 @@ function getRandomOperation()
 {
     $operations = ['+', '-', '*'];
 
-    return $operations[rand(0, count($operations) - 1)];
+    return $operations[array_rand($operations)];
 }
 
 function makeAnswer($firstOperand, $secondOperand, $operation)
@@ -25,7 +25,7 @@ function makeAnswer($firstOperand, $secondOperand, $operation)
     }
 }
 
-function playRound()
+function getGameData()
 {
     $firstOperand = rand(1, 300);
     $secondOperand = rand(1, 300);
@@ -46,7 +46,7 @@ function game()
     run(
         $describeGame,
         function () {
-            return playRound();
+            return getGameData();
         }
     );
 }

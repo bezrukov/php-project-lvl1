@@ -9,7 +9,7 @@ function isEven(int $num)
     return $num % 2 === 0;
 }
 
-function playRound()
+function getGameData()
 {
     $question = rand(0, 300);
     $answer = isEven($question) ? 'yes' : 'no';
@@ -26,7 +26,7 @@ function game()
     run(
         $describeGame,
         function () {
-            return playRound();
+            return getGameData();
         }
     );
 }
